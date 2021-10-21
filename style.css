@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body{
+    background-color: rgb(233, 233, 233);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    font-family: 'Montserrat', sans-serif;
+    z-index: 2;
+    position: sticky;
+    top:0px;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    background-color: rgb(0, 0, 27);
+    height: max-content;
+}
+nav ul li{
+    color: white;
+    padding: 10px 10px;
+}
+nav ul .opt{
+    background: linear-gradient(to right, rgb(227, 127, 236) 50%, rgb(0, 0, 0) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+nav ul .opt:hover{
+    color: #000;
+    background-position: left bottom;
+    cursor: pointer;
+}
+.container{
+    background: rgb(11,11,11);
+    min-height: 50vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+
+}
+footer{
+    background: #000;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+    z-index: 2;
+}
+footer .bottom{
+    /* background: rgb(0, 0, 63); */
+    margin: 10px 10px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+}
+footer .bottom .songInfo{
+    background-color: aqua;
+    color: beige;
+}
+footer .bottom .seek{
+    display: flex;
+    flex-direction: row;
+}
+footer .bottom .icons {
+    
+}
+footer .bottom img{
+    height: 50px;
+}
+#ProgressBar{
+    width: 75vh;
+}
+footer h4{
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 5px;
+    padding: 10px;
+}
+
+
