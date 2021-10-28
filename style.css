@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 body{
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(0, 0, 0);
+    /* background: url(/Black-Purple-Wallpaper-26-1920x1200.jpg); */
 }
 
 *{
@@ -20,7 +21,13 @@ nav ul{
     background-color: rgb(0, 0, 27);
     height: max-content;
 }
+nav ul .logo img{
+    height: 40px;
+    width: 40px;
+}
 nav ul li{
+    display: flex;
+    align-items: center;
     color: white;
     padding: 10px 10px;
 }
@@ -38,10 +45,72 @@ nav ul .opt:hover{
 .container{
     background: rgb(11,11,11);
     min-height: 50vh;
-    padding: 100px;
+    padding: 45px;
     display: flex;
-    justify-content: center;
-
+    background-image: url(/assets/extras/Black-Purple-Wallpaper-26-1920x1200.jpg);
+    width: 100%;
+    opacity: 1;
+    transition: 0.2s ease-in-out;
+}
+.container .songList{
+    height: 54vh;
+    overflow-y: scroll;
+}
+.container .songList::-webkit-scrollbar {
+    display: none;
+}
+.container .songList .songItem{
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: beige;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.container .songList .songItem .cover{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.container .songList .songItem .play{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.container2{
+    position: fixed;
+    top: 45%;
+    left: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    height: 70%;
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: 0.7s ease-in-out;
+    opacity: 0;
+}
+.container2 .ring{
+    border-radius: 750px;
+}
+.container2 .social{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.container2 .social img{
+    width: 15vh;
+    height: 15vw;
 }
 footer{
     background: #000;
@@ -49,13 +118,13 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 50px 50px 0px 0px;
     position: sticky;
     bottom: 0px;
     width: 100%;
     z-index: 2;
 }
 footer .bottom{
-    /* background: rgb(0, 0, 63); */
     margin: 10px 10px;
     height: 100px;
     width: 100%;
@@ -66,15 +135,25 @@ footer .bottom{
     padding: 5px;
 }
 footer .bottom .songInfo{
-    background-color: aqua;
     color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .bottom .songInfo .gif{
+    margin-bottom: 2px;
+}
+footer .bottom .songInfo .gif img{
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
 }
 footer .bottom .seek{
     display: flex;
     flex-direction: row;
 }
 footer .bottom .icons {
-    
+    cursor: pointer;
 }
 footer .bottom img{
     height: 50px;
@@ -82,10 +161,10 @@ footer .bottom img{
 #ProgressBar{
     width: 75vh;
 }
-footer h4{
+
+footer h5{
+    margin-top: 12px;
     color: rgba(255, 255, 255, 0.5);
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     padding: 10px;
 }
-
-
