@@ -6,29 +6,37 @@ let ProgressBar = document.getElementById('ProgressBar');
 let gif = document.getElementById('gif');
 let container = document.getElementById('container');
 let container2 = document.getElementById('container2');
+let songItems= Array.from(document.getElementsByClassName('songItem'));
 let songs = [
-    {songIndex: 1, songName: "Tujhe Bhula Diya - Mohit Chauhan, Shekhar Ravjiani, Shruti Pathak ", filePath: "assets/songs/1.mp3", coverPath: "assets/covers/aries.jpg"},
-    {songIndex: 2, songName: "Tera Hone Laga Hoon - Alisha Chinai, Atif Aslam, Joi Barua ", filePath: "assets/songs/2.mp3", coverPath: "assets/covers/tauros.jpg"},
-    {songIndex: 3, songName: "I am in Love - Dominique Cerejo, KK, Pritam Chakraborty ", filePath: "assets/songs/3.mp3", coverPath: "assets/covers/twin.jpg"},
-    {songIndex: 4, songName: "Main Pareshaan - Shalmali Kholgade ", filePath: "assets/songs/4.mp3", coverPath: "assets/covers/cancer.jpg"},
-    {songIndex: 5, songName: "Tujhko Jo Paya -  Mohit Chauhan ", filePath: "assets/songs/5.mp3", coverPath: "assets/covers/leo.jpg"},
-    {songIndex: 6, songName: "Mann Mera - Gajendra Verma ", filePath: "assets/songs/6.mp3", coverPath: "assets/covers/virgo.jpg"},
-    {songIndex: 7, songName: "Hasi Bann Gaye - Ami Mishra ", filePath: "assets/songs/7.mp3", coverPath: "assets/covers/scale.jpg"},
-    {songIndex: 8, songName: "Mera Mann Kehne Laga - Falak Shabir ", filePath: "assets/songs/8.mp3", coverPath: "assets/covers/scorpio.jpg"},
-    {songIndex: 9, songName: "Hum Kis Galli Ja Rahe Hain - Atif Aslam ", filePath: "assets/songs/9.mp3", coverPath: "assets/covers/bow.jpg"},
-    {songIndex: 10, songName: "Meherbaan - Shekhar Ravjiani, Ash King, Shilpa Rao ", filePath: "assets/songs/10.mp3", coverPath: "assets/covers/capri.jpg"},
-    {songIndex: 11, songName: "Mere Haath Mai -  Sonu Nigam ", filePath: "assets/songs/11.mp3", coverPath: "assets/covers/aqua.jpg"},
-    {songIndex: 12, songName: "Mere Mehboob Qayamat - Yo Yo Honey Singh", filePath: "assets/songs/12.mp3", coverPath: "assets/covers/ying.jpg"},
+    {songIndex: 1, songName: "Tujhe Bhula Diya - Mohit Chauhan, Shekhar Ravjiani, Shruti Pathak ", filePath: "assets/songs/1.mp3",time:"04:41", coverPath: "assets/covers/aries.jpg"},
+    {songIndex: 2, songName: "Tera Hone Laga Hoon - Alisha Chinai, Atif Aslam, Joi Barua ", filePath: "assets/songs/2.mp3",time:"05:00", coverPath: "assets/covers/tauros.jpg"},
+    {songIndex: 3, songName: "I am in Love - Dominique Cerejo, KK, Pritam Chakraborty ", filePath: "assets/songs/3.mp3",time:"05:01", coverPath: "assets/covers/twin.jpg"},
+    {songIndex: 4, songName: "Main Pareshaan - Shalmali Kholgade ", filePath: "assets/songs/4.mp3",time:"04:51", coverPath: "assets/covers/cancer.jpg"},
+    {songIndex: 5, songName: "Tujhko Jo Paya -  Mohit Chauhan ", filePath: "assets/songs/5.mp3",time:"04:49", coverPath: "assets/covers/leo.jpg"},
+    {songIndex: 6, songName: "Mann Mera - Gajendra Verma ", filePath: "assets/songs/6.mp3",time:"03:18", coverPath: "assets/covers/virgo.jpg"},
+    {songIndex: 7, songName: "Hasi Bann Gaye - Ami Mishra ", filePath: "assets/songs/7.mp3",time:"04:32", coverPath: "assets/covers/scale.jpg"},
+    {songIndex: 8, songName: "Mera Mann Kehne Laga - Falak Shabir ", filePath: "assets/songs/8.mp3",time:"03:46", coverPath: "assets/covers/scorpio.jpg"},
+    {songIndex: 9, songName: "Hum Kis Galli Ja Rahe Hain - Atif Aslam ", filePath: "assets/songs/9.mp3",time:"05:01", coverPath: "assets/covers/bow.jpg"},
+    {songIndex: 10, songName: "Meherbaan - Shekhar Ravjiani, Ash King, Shilpa Rao ", filePath: "assets/songs/10.mp3",time:"05:07", coverPath: "assets/covers/capri.jpg"},
+    {songIndex: 11, songName: "Mere Haath Mai -  Sonu Nigam ", filePath: "assets/songs/11.mp3",time:"04:47", coverPath: "assets/covers/aqua.jpg"},
+    {songIndex: 12, songName: "Mere Mehboob Qayamat - Yo Yo Honey Singh", filePath: "assets/songs/12.mp3",time:"03:16", coverPath: "assets/covers/ying.jpg"},
 ]
+songItems.forEach((element,i)=>{
+    element.getElementsByClassName("cover")[0].src = songs[i].coverPath;
+    element.getElementsByClassName("name")[0].innerText = songs[i].songName;
+    element.getElementsByClassName("time")[0].innerText = songs[i].time;
+    element.getElementsByClassName("play")[0].src = "assets/music/vynil (1).svg";
+})
+
 function playbutton(){
     if(audioElement.paused || audioElement.currentTime<=0){
         audioElement.play();
-        masterPlay.src = "/assets/music/pause.png";
+        masterPlay.src = "/assets/music/pause.svg";
         gif.style.opacity= 1;
     }
     else{
         audioElement.pause();
-        masterPlay.src = "/assets/music/play.png";
+        masterPlay.src = "/assets/music/play.svg";
         gif.style.opacity=0;
     }
 }
